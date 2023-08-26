@@ -1,0 +1,49 @@
+﻿@model Shopping_cart.Models.ImageModel.CreateImageModel
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+<div class="tile">
+    <h3 class="tile-title">Add New Product </h3>
+    <form asp-controller="Products" asp-action="AddProduct" method="post" enctype="multipart/form-data">
+        <table class="table">
+            <tr>
+                <td>Enter Name</td>
+                <td><input type="text" asp-for="PName" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td>Enter Price</td>
+                <td><input type="text" asp-for="PPrice" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td>Enter Description</td>
+                <td><input type="text" asp-for="PDesc" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td>Salect Category</td>
+                <td>
+                    <select asp-for="CategoryID" asp-items="ViewBag.showcat" class="form-control"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>Select Brand</td>
+                <td>
+                    <select asp-for="BrandID" asp-items="ViewBag.showbrand" class="form-control"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>Select Image</td>
+                <td><input type="file" asp-for="ImagePath" class="form-control" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" class="btn btn-primary" /></td>
+            </tr>
+
+        </table>
+    </form>
+
+</div>
